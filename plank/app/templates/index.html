@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="header">
+    <h1>Plank</h1>
+</div>
+
+<div class="content">
+
+    <div class="posts">
+    {% for post in posts %}
+        {% include 'includes/_posts.html' %}
+    {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

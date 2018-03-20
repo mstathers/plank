@@ -1,0 +1,18 @@
+<div class="post">
+    <ul class="postlist">
+        {% if post.title %}
+        <li class="postheader">{{ post.title }} ({{ post.timestamp}})</li>
+        {% endif %}
+        {% if post.owner.username %}
+        <li class="postheader" id=user>{{ post.owner.username }}</li>
+        {% else %}
+        <li class="postheader" id=user>Anon</li>
+        {% endif %}
+    </ul>
+    {% if post.body %}
+    <p class="postbody">{{ post.body }}</p>
+    {% endif %}
+    <a href="{{ post.image }}">
+        <img src="{{ post.image }}" style=max-width:400px;">
+    </a>
+</div>

@@ -1,0 +1,25 @@
+    <nav>
+      <div>
+        <ul>
+          <li class=navleft>
+            <a href="{{ url_for('index') }}">Plank</a>
+          </li>
+          <li class=navleft>
+            <a href="{{ url_for('about') }}">About</a>
+          </li>
+          {% if current_user.is_authenticated %}
+          <li class=navleft>
+            <a href="{{ url_for('upload') }}">Upload</a>
+          </li>
+          {% endif %}
+
+          <li class=navright>
+            {% if current_user.is_anonymous %}
+            <a href="{{ url_for('register') }}">Register</a> | <a href="{{ url_for('login') }}">Login</a>
+            {% else %}
+            {{ current_user.username }} | <a href="{{ url_for('logout') }}">Logout</a>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+    </nav>
